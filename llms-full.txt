@@ -170,6 +170,7 @@ Each `paymentMethods` entry is an array where the first element is the rail iden
   l402      — L402 protocol (Lightning BOLT-11 invoices). Example: ['l402', 'lightning']
   cashu     — Cashu ecash. Example: ['cashu']
   xcashu    — Cashu ecash via NUT-24 (X-Cashu header). Example: ['xcashu']
+  lnurlcash — LUD-25 bearer note in an X-LNURLcash header. Example: ['lnurlcash', 'mint.example']
   x402      — x402 stablecoin payments. Example: ['x402', 'base', 'usdc', '0xabc...']
   payment   — IETF Payment protocol. Example: ['payment', 'lightning']
 

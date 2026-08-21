@@ -76,7 +76,7 @@ Announce that you accept both Lightning and Cashu ecash:
 paymentMethods: [['l402', 'lightning'], ['xcashu']],
 ```
 
-Each entry is an array where the first element is the rail (`l402`, `cashu`, `xcashu`, `x402`, `payment`) and subsequent elements are rail-specific parameters. Agents discovering your service will see both options and choose what they support.
+Each entry is an array where the first element is the rail (`l402`, `cashu`, `xcashu`, `lnurlcash`, `x402`, `payment`) and subsequent elements are rail-specific parameters. Agents discovering your service will see both options and choose what they support.
 
 ## Using with toll-booth
 
