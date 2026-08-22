@@ -7,6 +7,14 @@
 
 # [2.1.0](https://github.com/forgesworn/402-announce/compare/v2.0.1...v2.1.0) (2026-03-24)
 
+## 2.2.0 (2026-08-22)
+
+### Features
+
+- accept lnurlcash as a payment method rail (#32)
+
+
+
 
 ### Features
 
