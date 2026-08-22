@@ -46,6 +46,7 @@ export interface AnnounceConfig {
    * - x402: ['x402', 'base', 'usdc', '<receiver-address>']
    * - Cashu: ['cashu']
    * - xCashu: ['xcashu']
+   * - LNURLcash: ['lnurlcash', '<mint host>', ...] (subsequent elements are the accepted mint hosts)
    * The first element (tag[1]) is the relay-side filter key.
    */
   paymentMethods: string[][]

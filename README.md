@@ -238,6 +238,7 @@ Each `paymentMethods` entry is an array where the first element is the rail iden
 | `l402` | `['l402', 'lightning']` | L402 protocol (Lightning BOLT-11 invoices) |
 | `cashu` | `['cashu']` | Cashu ecash (generic) |
 | `xcashu` | `['xcashu']` | Cashu ecash via NUT-24 (X-Cashu header) |
+| `lnurlcash` | `['lnurlcash', 'mint.example']` | LUD-25 bearer note presented in an X-LNURLcash header (subsequent elements are the accepted mint hosts) |
 | `x402` | `['x402', 'base', 'usdc', '0xabc...']` | x402 stablecoin payments (chain, token, receiver address) |
 | `payment` | `['payment', 'lightning']` | IETF Payment protocol |
 

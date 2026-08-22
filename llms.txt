@@ -13,7 +13,7 @@ This library uses kind 31402 for **L402/x402 service announcements** (paid API d
 ## Key concepts
 
 - **Kind 31402**: Nostr event kind for L402/x402 service announcements. Parameterised replaceable — same pubkey + identifier updates the existing listing.
-- **Payment methods**: Services declare accepted payment methods via multi-element `pmi` tags. Each `paymentMethods` entry is `[rail, ...params]` (e.g. `['l402', 'lightning']`, `['cashu']`, `['x402', 'base', 'usdc', '<addr>']`, `['payment', 'lightning']`).
+- **Payment methods**: Services declare accepted payment methods via multi-element `pmi` tags. Each `paymentMethods` entry is `[rail, ...params]` (e.g. `['l402', 'lightning']`, `['cashu']`, `['lnurlcash', 'mint.example']`, `['x402', 'base', 'usdc', '<addr>']`, `['payment', 'lightning']`).
 - **Pricing**: Per-capability pricing via `price` tags (capability name, amount, currency).
 - **Decentralised discovery**: Events are published to standard Nostr relays. Any client can subscribe and filter.
 - **Multi-transport**: A single event can carry multiple `url` tags (1–10). Use this when the same service is reachable via clearnet, Tor (.onion), or Handshake domains.

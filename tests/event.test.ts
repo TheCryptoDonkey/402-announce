@@ -351,6 +351,33 @@ describe('buildAnnounceEvent', () => {
       }))).not.toThrow()
     })
 
+    it('accepts lnurlcash rail with mint hosts', () => {
+      expect(() => buildAnnounceEvent(makeSecretKeyHex(), makeConfig({
+        paymentMethods: [['lnurlcash', 'mint.example']],
+      }))).not.toThrow()
+    })
+
+    it('builds lnurlcash pmi tag with mint hosts', () => {
+      const config = makeConfig({
+        paymentMethods: [['lnurlcash', 'mint.example', 'mint2.example']],
+      })
+      const event = buildAnnounceEvent(config.secretKey, config)
+      const pmiTags = event.tags.filter(t => t[0] === 'pmi')
+      expect(pmiTags[0]).toEqual(['pmi', 'lnurlcash', 'mint.example', 'mint2.example'])
+    })
+
+    it('lists every recognised rail in the rejection message', () => {
+      try {
+        buildAnnounceEvent(makeSecretKeyHex(), makeConfig({ paymentMethods: [['nope']] }))
+        throw new Error('expected buildAnnounceEvent to throw')
+      } catch (err) {
+        const message = (err as Error).message
+        for (const rail of ['l402', 'x402', 'cashu', 'xcashu', 'lnurlcash', 'payment']) {
+          expect(message).toContain(rail)
+        }
+      }
+    })
+
     it('builds x402 pmi tag with all params', () => {
       const config = makeConfig({
         paymentMethods: [['x402', 'base', 'usdc', '0xabc123']],
